@@ -5,7 +5,7 @@ const RSS_URL = 'https://nsearchives.nseindia.com/content/RSS/Online_announcemen
 
 async function fetchRSSWithRetry(retries = 1) {
   try {
-    const response = await axios.get(RSS_URL, { timeout: 15000 }); // 15s timeout
+    const response = await axios.get(RSS_URL, { timeout: 60000 }); // 15s timeout
     const xml = response.data;
 
     const parser = new xml2js.Parser();
